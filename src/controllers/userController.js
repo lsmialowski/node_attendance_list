@@ -1,4 +1,3 @@
-// const userSchema = require('./../validator/userSchema');
 const usersDatabaseToUserEntity = require('./../mapper/usersDatabaseToUserEntity');
 const userDatabaseToUserEntity = require('./../mapper/userDatabaseToUserEntity');
 const Joi = require('joi');
