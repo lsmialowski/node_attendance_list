@@ -11,10 +11,10 @@ module.exports = connection.define('users', {
         type: dataTypes.STRING
     },
     group: {
-        type: dataTypes.INTEGER
+        type: dataTypes.STRING
     },
     joinDate: {
-        type: dataTypes.INTEGER
+        type: dataTypes.DATE
     }
 }, {
     timestamps: false
