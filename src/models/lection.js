@@ -11,7 +11,7 @@ module.exports = connection.define('lection', {
         type: dataTypes.STRING
     },
     date: {
-        type: dataTypes.INTEGER
+        type: dataTypes.DATE
     },
     description: {
         type: dataTypes.STRING
