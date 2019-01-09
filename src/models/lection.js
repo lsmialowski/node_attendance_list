@@ -3,15 +3,18 @@ const connection = db.getConnection();
 
 const dataTypes = require('sequelize');
 
-module.exports = connection.define('pets', {
-    name: {
+module.exports = connection.define('lection', {
+    title: {
         type: dataTypes.STRING
     },
-    owner: {
+    category: {
         type: dataTypes.STRING
     },
-    age: {
+    date: {
         type: dataTypes.INTEGER
+    },
+    description: {
+        type: dataTypes.STRING
     }
 }, {
     timestamps: false
