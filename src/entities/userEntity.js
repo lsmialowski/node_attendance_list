@@ -1,9 +1,9 @@
-const userEntity = (id, name, surname, group, join_date) => {
+const userEntity = (id, name, surname, party, join_date) => {
     return {
         id,
         name: name,
         surname: surname,
-        group: group,
+        party: party,
         joinDate: join_date
     }
 };
