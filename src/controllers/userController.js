@@ -1,5 +1,6 @@
-const usersDatabaseToUserEntity = require('./../mapper/usersDatabaseToUserEntity');
-const userDatabaseToUserEntity = require('./../mapper/userDatabaseToUserEntity');
+const userSchema = require('./../validators/userSchema');
+const usersDatabaseToUserEntity = require('./../mappers/usersDatabaseToUserEntity');
+const userDatabaseToUserEntity = require('./../mappers/userDatabaseToUserEntity');
 const Joi = require('joi');
 
 const getAll = (req, res) => {
@@ -22,15 +23,16 @@ const get = (req, res) => {
 
 const create = (req, res) => {
     const user = require('./../models/user');
-    const result = Joi.validate(req.body, userSchema);
-    if (result.error !== null) {
-        result.error.status = 400;
-        throw result.error;
-    }
+   const result = Joi.validate(req.body, userSchema);
+   if (result.error !== null) {
+       result.error.status = 400;
+       throw result.error;
+   }
     user.create({
             name: req.body.name,
-            description: req.body.description,
-            age: req.body.age
+            surname: req.body.surname,
+            party: req.body.party,
+            joinDate: req.body.joinDate
         }
     )
         .then((data) => {
@@ -46,9 +48,12 @@ const edit = (req, res) => {
         throw result.error;
     }
     user.update(
-        {name: req.body.name,
-            description: req.body.description,
-            age: req.body.age},
+        {
+            name: req.body.name,
+            surname: req.body.surname,
+            party: req.body.party,
+            joinDate: req.body.joinDate
+        },
         {where: {id: req.params.id}}
     ).then(data => {
         if(data[0] === 0){

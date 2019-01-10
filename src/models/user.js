@@ -10,7 +10,7 @@ module.exports = connection.define('users', {
     surname: {
         type: dataTypes.STRING
     },
-    group: {
+    party: {
         type: dataTypes.STRING
     },
     joinDate: {
