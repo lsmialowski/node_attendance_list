@@ -1,12 +1,12 @@
-const userDatabaseToUserEntity = require('./userDatabaseToUserEntity');
+const lectionDatabaseToLectionEntity = require('./lectionDatabaseToLectionEntity');
 
-const usersDatabaseToUserEntity = (data) => {
-    const users = [];
+const lectionsDatabaseToLectionEntity = (data) => {
+    const lections = [];
 
-    for (const userData of data) {
-        users.push(userDatabaseToUserEntity(userData));
+    for (const lectionData of data) {
+        lections.push(lectionDatabaseToLectionEntity(lectionData));
     }
-    return users;
+    return lections;
 };
 
-module.exports = usersDatabaseToUserEntity;
+module.exports = lectionsDatabaseToLectionEntity;
