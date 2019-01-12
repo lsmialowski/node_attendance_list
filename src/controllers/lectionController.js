@@ -1,3 +1,8 @@
+const lectionSchema = require('./../validators/lectionSchema');
+const lectionsDatabaseToLectionEntity = require('./../mappers/lectionsDatabaseToLectionEntity');
+const lectionDatabaseToLectionEntity = require('./../mappers/lectionDatabaseToLectionEntity');
+const Joi = require('joi');
+
 const getAll = (req, res) => {
     const lection = require('./../models/lection');
     lection.findAll().then(data => {
