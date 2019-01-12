@@ -6,7 +6,7 @@ const db = require ('./lib/db/database');
 
 const indexRouter = require('./src/routes/index');
 const usersRouter = require('./src/routes/users');
-const lectionsRouter = require('./src/routes/lection');
+const lectionsRouter = require('./src/routes/lections');
 
 const app = express();
 db.connect();
@@ -20,5 +20,5 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/lection', lectionsRouter);
+app.use('/lections', lectionsRouter);
 module.exports = app;
