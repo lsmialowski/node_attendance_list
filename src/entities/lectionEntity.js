@@ -7,5 +7,5 @@ const lectionEntity = (id, title, category, date, description) => {
         description: description
     }
 };
-
+// yolo
 module.exports = lectionEntity;
